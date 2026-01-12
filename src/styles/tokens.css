@@ -21,7 +21,7 @@
   --c-bg-inverse: #343a40;
 
   /* Text */
-  --c-text: #0f0f0f;
+  --c-text: var(--theme-text);
   --c-text-sub: #495057;
   --c-text-light: #6c757d;
   --c-text-lighter: #adb5bd;
@@ -69,6 +69,7 @@
     "BlinkMacSystemFont", "sans-serif";
 
   /* Font Sizes */
+  --fs-xxs: 0.625rem; /* 10px */
   --fs-xs: 0.75rem; /* 12px */
   --fs-sm: 0.875rem; /* 14px */
   --fs-base: 1rem; /* 16px */
