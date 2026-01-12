@@ -1,0 +1,30 @@
+{
+  "name": "resume-json-to-pdf",
+  "version": "1.0.0",
+  "description": "Resume JSON to PDF",
+  "author": "chocolat5",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint . --fix --report-unused-disable-directives --max-warnings=0",
+    "format": "prettier --write 'src/**/*.{astro,ts,js,json,css,scss,md}'",
+    "check": "eslint . --report-unused-disable-directives --max-warnings=0 && prettier --check 'src/**/*.{astro,ts,js,json,css,scss,md}'"
+  },
+  "dependencies": {
+    "astro": "^5.16.8",
+    "sass": "^1.97.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.52.0"
+  }
+}
