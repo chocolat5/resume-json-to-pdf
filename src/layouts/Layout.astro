@@ -1,0 +1,50 @@
+---
+import { Font } from "astro:assets";
+
+import themeData from "@/data/theme.json";
+
+import "@/styles/tokens.css";
+import "@/styles/global.scss";
+import "@/styles/print.scss";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "A simple static site generator that converts your resume data from JSON into a HTML page optimized for PDF export.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <Font cssVariable="--font-jakarta" preload />
+    <title>{title}</title>
+    <style
+      define:vars={{
+        accentColor: themeData.accent,
+        accentDarkColor: themeData.accentDark,
+        textColor: themeData.text,
+        backgroundColor: themeData.background,
+      }}
+    >
+      :root {
+        --theme-accent: var(--accentColor);
+        --theme-accent-dark: var(--accentDarkColor);
+        --theme-text: var(--textColor);
+        --theme-background: var(--backgroundColor);
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,114 @@
+---
+import type { Language, Link } from "@/types";
+
+interface Props {
+  items: string[] | Link[] | Language[];
+  type?: "simple" | "link" | "language" | "grid";
+}
+
+const { items, type = "simple" } = Astro.props;
+---
+
+{
+  type === "simple" && (
+    <ul class="list">
+      {(items as string[]).map((item) => (
+        <li class="item">{item}</li>
+      ))}
+    </ul>
+  )
+}
+
+{
+  type === "link" && (
+    <ul class="list">
+      {(items as Link[]).map((link) => (
+        <li class="item">
+          <a
+            href={link.url}
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+{
+  type === "language" && (
+    <ul class="list">
+      {(items as Language[]).map((lang) => (
+        <li class="item">
+          <span class="language-name">{lang.language}:</span>
+          <span class="language-level">{lang.level}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+{
+  type === "grid" && (
+    <div class="grid">
+      {(items as string[]).map((item) => (
+        <span class="grid-item">{item}</span>
+      ))}
+    </div>
+  )
+}
+
+<style lang="scss">
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+  }
+
+  .item {
+    color: var(--theme-text);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-normal);
+  }
+
+  .link {
+    color: var(--theme-text);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-normal);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .language-name {
+    color: var(--theme-text);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    line-height: var(--lh-normal);
+  }
+
+  .language-level {
+    margin-left: var(--sp-xs);
+    color: var(--theme-text);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-normal);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-sm);
+  }
+
+  .grid-item {
+    color: var(--theme-text);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-normal);
+  }
+</style>

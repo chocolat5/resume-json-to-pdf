@@ -1,0 +1,86 @@
+---
+import SidebarSection from "@/components/SidebarSection.astro";
+import type { Personal } from "@/types";
+
+interface Props {
+  personal: Personal;
+}
+
+const { personal } = Astro.props;
+---
+
+<div class="personal">
+  <h1 class="personal-name">{personal.name}</h1>
+  <p class="personal-title">{personal.title}</p>
+
+  <SidebarSection title="Details">
+    <p class="section-item">{personal.location}</p>
+    {personal.phone.map((phone) => <p class="section-item">{phone}</p>)}
+    <a href={`mailto:${personal.email}`} class="personal-link">
+      {personal.email}
+    </a>
+    <p class="personal-label">Nationality</p>
+    <p class="section-item">{personal.nationality}</p>
+  </SidebarSection>
+</div>
+
+<style lang="scss">
+  .personal {
+  }
+
+  .personal-name {
+    margin-bottom: var(--sp-sm);
+    color: var(--theme-text);
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    line-height: var(--lh-tight);
+  }
+
+  .personal-title {
+    margin-bottom: var(--sp-lg);
+    color: var(--theme-text);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    line-height: var(--lh-tight);
+
+    &:after {
+      display: block;
+      content: "";
+      width: 32px;
+      height: 1px;
+      margin-top: var(--sp-lg);
+      background-color: var(--c-text-lighter);
+    }
+  }
+
+  .section-item {
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+  }
+
+  .personal-label {
+    margin-top: var(--sp-md);
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+    font-size: var(--fs-xxs);
+    font-weight: 500;
+    line-height: var(--lh-normal);
+  }
+
+  .personal-link {
+    display: block;
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    word-break: break-all;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+</style>

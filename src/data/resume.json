@@ -1,0 +1,123 @@
+{
+  "personal": {
+    "name": "Yurie Futatsugi",
+    "title": "Front-end Developer",
+    "location": "Thessaloniki, Greece",
+    "phone": ["+30 698 827 2973", "+81 8022574336"],
+    "email": "futatsugi.y@gmail.com",
+    "nationality": "Japanese"
+  },
+  "summary": [
+    "Web Developer with 9+ years of experience in building and maintaining websites and applications. Skilled in delivering clean, maintainable code while enhancing user experience and performance.",
+    "Experienced in implementing engaging animations that bring projects to life, reflecting the world and atmosphere of each work.",
+    "Strong ability to quickly understand project requirements and balance speed, quality, and efficiency",
+    "Proficient in both Web and Frontend development, providing effective solutions that support team and project growth"
+  ],
+  "skills": [
+    "React",
+    "JavaScript / TypeScript",
+    "HTML5 / CSS3 (Scss)",
+    "Animation: GSAP, CSS Animations",
+    "Frameworks (Astro, Next.js)",
+    "Libraries (Storybook, MUI, ESLint, Prettier)",
+    "Tools (GitHub, Figma)"
+  ],
+  "links": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/yurie-f/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/chocolat5"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Japanese",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "Intermediate B2"
+    },
+    {
+      "language": "Greek",
+      "level": "Elementary A1"
+    }
+  ],
+  "interests": ["Movie", "Tea", "Museums", "Cycling", "Volleyball"],
+  "experience": [
+    {
+      "title": "Frontend & Web Developer",
+      "company": "Gaji-Labo Inc.",
+      "location": "Tokyo, Japan (Remote) - Greece (Remote)",
+      "period": "August 2022 - Present",
+      "responsibilities": [
+        "Maintain B2B web applications for the construction equipment rental industry using React and TypeScript, Next.js in agile",
+        "Deliver new features with code quality on time, refactor components with best code practices, and pixel perfect, responsive UIs based on Figma",
+        "Review PRs in 1-2 days with constructive feedback",
+        "Define the real issue for front-end related issues, collaborating with QA"
+      ]
+    },
+    {
+      "title": "Freelance Web & Frontend Developer",
+      "company": null,
+      "location": "Tokyo, Japan (Remote) - Greece (Remote)",
+      "period": "March 2016 - Present",
+      "responsibilities": [
+        "Built and maintained 50+ websites and 30+ landing pages using TypeScript, RESTful APIs, React, Astro, Next.js, and WordPress.",
+        "Implemented engaging animations that reflect project concepts and improve user experience.",
+        "Integrated custom CMS and SaaS-based e-commerce solutions.",
+        "Improved performance and usability by implementing SEO and optimization best practices"
+      ]
+    },
+    {
+      "title": "Web Developer & Art Director",
+      "company": "Planning OM Co.,Ltd.",
+      "location": "Tokyo, Japan",
+      "period": "June 2011 - February 2016",
+      "responsibilities": [
+        "Created responsive, animated websites, often for creative projects, maintaining WordPress sites.",
+        "Managed project schedules, coordinated designers, and handled copywriting and proofreading.",
+        "Managed project schedules, directed designers, and handled copywriting and proofreading"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Corporate website template built with Astro",
+      "period": "November 2025 - December 2025",
+      "description": "14 ready-to-use pages, JSON-based content management.",
+      "links": [
+        {
+          "type": "demo",
+          "url": "https://nagi-6tu.pages.dev/"
+        }
+      ]
+    },
+    {
+      "title": "cinefil (React, TypeScript, Astro, Hono)",
+      "period": "August 2025 - October 2025",
+      "description": "Full-stack web app for personalized cinema profiles; implemented authentication, backend APIs, and SEO-optimized dynamic pages.",
+      "links": [
+        {
+          "type": "url",
+          "url": "https://cinefil.me/"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chocolat5/cinefil"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Information and Communication",
+      "school": "Meiji University",
+      "location": "Japan",
+      "period": "April 2004 - March 2008"
+    }
+  ]
+}

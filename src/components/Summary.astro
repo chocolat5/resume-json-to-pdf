@@ -1,0 +1,44 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="summary">
+  <ul class="summary-list">
+    {items.map((item) => <li class="summary-item">{item}</li>)}
+  </ul>
+</section>
+
+<style lang="scss">
+  .summary {
+  }
+
+  .summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+    list-style: disc inside;
+  }
+
+  .summary-item {
+    position: relative;
+    color: var(--c-text);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+    text-indent: -1.2em;
+    padding-left: 1em;
+
+    &::marker {
+      color: var(--c-text-light);
+    }
+
+    &:first-child {
+      padding-left: 0;
+      text-indent: inherit;
+      list-style: none;
+    }
+  }
+</style>

@@ -1,0 +1,160 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  period: string;
+  location?: string;
+  description?: string;
+  items?: string[];
+  links?: {
+    type: string;
+    url: string;
+  }[];
+}
+
+const { title, subtitle, period, location, description, items, links } =
+  Astro.props;
+---
+
+<article class="timeline-item">
+  <div class="timeline-header">
+    <div class="timeline-heading">
+      <h3 class="timeline-title">{title}</h3>
+      {subtitle && <p class="timeline-subtitle">, {subtitle}</p>}
+    </div>
+    <div class="timeline-meta">
+      {location && <span class="meta-location">{location}</span>}
+      <span class="meta-period">{period}</span>
+    </div>
+  </div>
+
+  {description && <p class="timeline-description">{description}</p>}
+
+  {
+    items && items.length > 0 && (
+      <ul class="timeline-list">
+        {items.map((item) => (
+          <li class="timeline-list-item">{item}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    links && links.length > 0 && (
+      <div class="timeline-links">
+        {links.map((link) => (
+          <a
+            href={link.url}
+            class="timeline-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.type === "demo" && "Live Demo: "}
+            {link.type === "url" && "URL: "}
+            {link.type === "github" && "GitHub: "}
+            <span class="link-url">{link.url}</span>
+          </a>
+        ))}
+      </div>
+    )
+  }
+</article>
+
+<style lang="scss">
+  .timeline-item {
+    & + .timeline-item {
+      margin-top: calc(var(--sp-xs) * 3);
+    }
+  }
+
+  .timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--sp-xs) var(--sp-sm);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .timeline-heading {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .timeline-title {
+    color: var(--c-text);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    line-height: var(--lh-tight);
+  }
+
+  .timeline-subtitle {
+    color: var(--c-text-sub);
+    font-size: var(--fs-xxs);
+    font-weight: 500;
+    line-height: var(--lh-normal);
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
+    color: var(--c-text-light);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+  }
+
+  .meta-location {
+    &::after {
+      margin-left: var(--sp-xs);
+      content: "•";
+    }
+  }
+
+  .timeline-description {
+    color: var(--c-text);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+  }
+
+  .timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+    list-style: none;
+    list-style: disc inside;
+  }
+
+  .timeline-list-item {
+    position: relative;
+    color: var(--c-text);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+    text-indent: -1.2em;
+    padding-left: 1em;
+
+    &::marker {
+      color: var(--c-text-light);
+    }
+  }
+
+  .timeline-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-xs) var(--sp-md);
+    margin-top: var(--sp-xs);
+  }
+
+  .timeline-link {
+    display: flex;
+    color: var(--c-text-light);
+    font-size: var(--fs-xxs);
+    line-height: var(--lh-normal);
+  }
+
+  .link-url {
+    color: var(--c-link);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>

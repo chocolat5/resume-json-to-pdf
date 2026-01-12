@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["main-content", className]}>
+  <slot />
+</div>
+
+<style lang="scss">
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+    padding: var(--sp-2xl) var(--sp-2xl) var(--sp-2xl) var(--sp-xl);
+    background-color: var(--c-bg-alt);
+  }
+</style>
