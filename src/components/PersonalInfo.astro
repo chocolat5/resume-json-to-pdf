@@ -1,0 +1,87 @@
+---
+import type { Personal } from "@/types";
+
+interface Props {
+  personal: Personal;
+}
+
+const { personal } = Astro.props;
+---
+
+<div class="personal">
+  <h1 class="personal-name">{personal.name}</h1>
+  <p class="personal-title">{personal.title}</p>
+
+  <div class="personal-details">
+    <h2 class="personal-heading">Details</h2>
+    <p class="personal-text">{personal.location}</p>
+    {personal.phone.map((phone) => <p class="personal-text">{phone}</p>)}
+    <a href={`mailto:${personal.email}`} class="personal-link">
+      {personal.email}
+    </a>
+    <p class="personal-label">Nationality</p>
+    <p class="personal-text">{personal.nationality}</p>
+  </div>
+</div>
+
+<style lang="scss">
+  .personal {
+  }
+
+  .personal-name {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--sp-sm);
+    color: var(--theme-text);
+  }
+
+  .personal-title {
+    font-size: var(--fs-md);
+    font-weight: 500;
+    line-height: var(--lh-normal);
+    color: var(--theme-text);
+  }
+
+  .personal-details {
+    margin-top: var(--sp-lg);
+  }
+
+  .personal-heading {
+    font-size: var(--fs-lg);
+    font-weight: 500;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--sp-md);
+    color: var(--theme-text);
+  }
+
+  .personal-label {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    line-height: var(--lh-normal);
+    margin-top: var(--sp-md);
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+  }
+
+  .personal-text {
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+  }
+
+  .personal-link {
+    display: block;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+    margin-bottom: var(--sp-xs);
+    color: var(--theme-text);
+    text-decoration: underline;
+    word-break: break-all;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+</style>
