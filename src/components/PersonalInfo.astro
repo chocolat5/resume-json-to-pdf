@@ -29,9 +29,9 @@ const { personal } = Astro.props;
   }
 
   .personal-name {
-    margin-bottom: var(--sp-xs);
+    margin-bottom: var(--sp-sm);
     color: var(--theme-text);
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-xl);
     font-weight: 600;
     line-height: var(--lh-tight);
   }
@@ -42,6 +42,15 @@ const { personal } = Astro.props;
     font-size: var(--fs-sm);
     font-weight: 500;
     line-height: var(--lh-tight);
+
+    &:after {
+      display: block;
+      content: "";
+      width: 32px;
+      height: 1px;
+      margin-top: var(--sp-lg);
+      background-color: var(--c-text-lighter);
+    }
   }
 
   .section-item {

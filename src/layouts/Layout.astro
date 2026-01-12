@@ -9,13 +9,13 @@ import "@/styles/global.scss";
 import "@/styles/print.scss";
 
 interface Props {
-  title?: string;
+  title: string;
   description?: string;
 }
 
 const {
-  title = "Resume | Yurie Futatsugi",
-  description = "Frontend Developer Resume",
+  title,
+  description = "A simple static site generator that converts your resume data from JSON into a HTML page optimized for PDF export.",
 } = Astro.props;
 ---
 
