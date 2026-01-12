@@ -1,11 +1,100 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainContent from "@/components/MainContent.astro";
+import MainContentSection from "@/components/MainContentSection.astro";
+import PersonalInfo from "@/components/PersonalInfo.astro";
+import SaveButton from "@/components/SaveButton.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import SidebarContent from "@/components/SidebarContent.astro";
+import SidebarSection from "@/components/SidebarSection.astro";
+import Summary from "@/components/Summary.astro";
+import TimelineItem from "@/components/TimelineItem.astro";
+import resumeData from "@/data/resume.json";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout>
-  <Welcome />
+<Layout title="Resume | Yurie Futatsugi">
+  <div class="resume-wrapper">
+    <div class="resume">
+      <Sidebar>
+        <PersonalInfo personal={resumeData.personal} />
+
+        <SidebarSection title="Skills">
+          <SidebarContent items={resumeData.skills} type="simple" />
+        </SidebarSection>
+
+        <SidebarSection title="Links">
+          <SidebarContent items={resumeData.links} type="link" />
+        </SidebarSection>
+
+        <SidebarSection title="Languages">
+          <SidebarContent items={resumeData.languages} type="language" />
+        </SidebarSection>
+
+        <SidebarSection title="Interests & Hobbies">
+          <SidebarContent items={resumeData.interests} type="grid" />
+        </SidebarSection>
+      </Sidebar>
+
+      <MainContent>
+        <Summary items={resumeData.summary} />
+
+        <MainContentSection title="Employment History">
+          {
+            resumeData.experience.map((exp) => (
+              <TimelineItem
+                title={exp.title}
+                subtitle={exp.company ?? undefined}
+                period={exp.period}
+                location={exp.location}
+                items={exp.responsibilities}
+              />
+            ))
+          }
+        </MainContentSection>
+
+        <MainContentSection title="Personal Projects">
+          {
+            resumeData.projects.map((project) => (
+              <TimelineItem
+                title={project.title}
+                period={project.period}
+                description={project.description}
+                links={project.links}
+              />
+            ))
+          }
+        </MainContentSection>
+
+        <MainContentSection title="Education">
+          {
+            resumeData.education.map((edu) => (
+              <TimelineItem
+                title={edu.degree}
+                subtitle={edu.school}
+                period={edu.period}
+                location={edu.location}
+              />
+            ))
+          }
+        </MainContentSection>
+      </MainContent>
+    </div>
+    <SaveButton />
+  </div>
 </Layout>
+
+<style lang="scss">
+  .resume-wrapper {
+    position: relative;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+
+  .resume {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 297mm;
+    background-color: var(--c-bg-alt);
+    box-shadow: var(--shadow-xl);
+  }
+</style>
