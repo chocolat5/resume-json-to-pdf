@@ -112,19 +112,3 @@ a {
   outline-color: rgba(var(--c-text-inverse), 0.2);
   outline-width: 4px;
 }
-
-/* ========================================
- * Animation
- * ======================================== */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity var(--transition-slower) var(--ease-out-quart),
-    transform var(--transition-slower) var(--ease-out-quart);
-
-  &.is-animated {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
