@@ -1,46 +1,96 @@
-# Astro Starter Kit: Basics
+# Resume JSON to PDF
 
-```sh
-npm create astro@latest -- --template basics
+A simple static site generator that converts your resume data from JSON into a HTML page optimized for PDF export.
+
+## Features
+
+- JSON-based content management
+- Separate theme configuration
+- One-click PDF generation via "Save as PDF" button
+
+## Getting Started
+
+```bash
+# Clone this repo
+git clone git@github.com:<YOUR_ID>/resume-json-to-pdf.git <PROJECT_NAME>
+
+# Move to the appropriate directory
+cd <PROJECT_NAME>
+
+# Install npm package
+npm install
+
+# Run the project
+npm run dev
+```
+Open `http://localhost:4321` in your browser. Click the "Save as PDF" button to generate your resume PDF.
+
+## Prerequisites
+
+- Node.js 22+
+- Astro 5.16.0+
+
+## Customization
+
+### Update Resume Content
+
+Edit `src/data/resume.json` with your information:
+
+```json
+{
+  "personal": {
+    "name": "Your Name",
+    "title": "Your Title",
+    ...
+  },
+  "experience": [...],
+  "projects": [...],
+  ...
+}
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Change Theme Colors
 
-## 🚀 Project Structure
+Edit `src/data/theme.json`:
 
-Inside of your Astro project, you'll see the following folders and files:
+```json
+{
+  "accent": "#a0ffc7",
+  "accentDark": "#6dffa9",
+  "text": "#1a4c3b",
+  "background": "fffffd"
+}
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Workflow
 
-## 🧞 Commands
+### Local Development
 
-All commands are run from the root of the project, from a terminal:
+1. Edit `src/data/resume.json`
+2. Run `npm run dev`
+3. Click "Save as PDF" button
+4. Save the generated PDF
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Production Workflow
 
-## 👀 Want to learn more?
+1. Deploy to Cloudflare Pages (or similar)
+2. Edit `resume.json` directly on GitHub
+3. Wait 1-2 minutes for automatic deployment
+4. Visit your deployed site
+5. Click "Save as PDF" button
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Print Settings
+
+When using the "Save as PDF" button, ensure:
+
+- Margins: None
+- Background graphics: Enabled
+
+## License
+
+MIT see the [LICENSE](./LICENSE) file for details.
+
+## Data Files
+
+The data files in `src/data/` (`resume.json` and `theme.json`) contain personal information and are not part of the open-source licensing of this project. These files are provided as examples only. Please replace them with your own data.
