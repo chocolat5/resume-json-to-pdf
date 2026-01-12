@@ -6,6 +6,7 @@ import themeData from "@/data/theme.json";
 import "@/styles/fonts.css";
 import "@/styles/tokens.css";
 import "@/styles/global.scss";
+import "@/styles/print.scss";
 
 interface Props {
   title?: string;
@@ -31,12 +32,14 @@ const {
     <style
       define:vars={{
         accentColor: themeData.accent,
+        accentDarkColor: themeData.accentDark,
         textColor: themeData.text,
         backgroundColor: themeData.background,
       }}
     >
       :root {
         --theme-accent: var(--accentColor);
+        --theme-accent-dark: var(--accentDarkColor);
         --theme-text: var(--textColor);
         --theme-background: var(--backgroundColor);
       }
