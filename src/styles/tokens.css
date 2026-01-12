@@ -6,12 +6,12 @@
   /* ========================================
    * Colors - Semantic Tokens
    * ======================================== */
-  /* Primary - Blue accent */
+  /* Primary */
   --c-primary: #2563eb;
   --c-primary-light: #3b82f6;
   --c-primary-dark: #1d4ed8;
 
-  /* Background - Cool gray */
+  /* Background */
   --c-bg: #f0f4f8;
   --c-bg-alt: #ffffff;
   --c-bg-secondary: #e2e8f0;
@@ -65,8 +65,8 @@
    * Typography
    * ======================================== */
   --font-family:
-    "Plus Jakarta Sans", "Zen Kaku Gothic New", "Inter", "Segoe UI",
-    "-apple-system", "BlinkMacSystemFont", "sans-serif";
+    var(--font-jakarta), "Inter", "Segoe UI", "-apple-system",
+    "BlinkMacSystemFont", "sans-serif";
 
   /* Font Sizes */
   --fs-xs: 0.75rem; /* 12px */
