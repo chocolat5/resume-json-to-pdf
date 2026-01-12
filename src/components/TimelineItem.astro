@@ -70,8 +70,9 @@ const { title, subtitle, period, location, description, items, links } =
 
   .timeline-header {
     display: flex;
-    flex-direction: column;
-    gap: var(--sp-xs);
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--sp-xs) var(--sp-sm);
     margin-bottom: var(--sp-sm);
   }
 
@@ -139,8 +140,8 @@ const { title, subtitle, period, location, description, items, links } =
 
   .timeline-links {
     display: flex;
-    flex-direction: column;
-    gap: var(--sp-xs);
+    flex-wrap: wrap;
+    gap: var(--sp-xs) var(--sp-md);
     margin-top: var(--sp-xs);
   }
 
