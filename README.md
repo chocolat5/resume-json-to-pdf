@@ -12,7 +12,7 @@ A simple static site generator that converts your resume data from JSON into a H
 
 ```bash
 # Clone this repo
-git clone git@github.com:<YOUR_ID>/resume-json-to-pdf.git <PROJECT_NAME>
+git clone git@github.com:chocolat5/resume-json-to-pdf.git <PROJECT_NAME>
 
 # Move to the appropriate directory
 cd <PROJECT_NAME>
