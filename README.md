@@ -63,23 +63,6 @@ Edit `src/data/theme.json`:
 
 ```
 
-## Workflow
-
-### Local Development
-
-1. Edit `src/data/resume.json`
-2. Run `npm run dev`
-3. Click "Save as PDF" button
-4. Save the generated PDF
-
-### Production Workflow
-
-1. Deploy to Cloudflare Pages (or similar)
-2. Edit `resume.json` directly on GitHub
-3. Wait 1-2 minutes for automatic deployment
-4. Visit your deployed site
-5. Click "Save as PDF" button
-
 ## Print Settings
 
 When using the "Save as PDF" button, ensure:
